@@ -28,6 +28,7 @@ public class Main {
     public static final String COMMAND_ERROR = "Unknown command.";
     public static final String CONTACTS_SHARING = "There are contacts that share phone numbers.";
     public static final String CONTACTS_DIF_NUMBERS = "All contacts have different phone numbers";
+    public static final String PHONE_NOT_EXISTS = "Phone number does not exist.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -160,13 +161,16 @@ public class Main {
 
     private static void existsPhoneCommand (ContactBook cBook){
         Contact[] contacts = cBook.getContacts();
-        for(int i = 0; i < contacts.length; i++){
+        for(int i = 0; i < contacts.length - 1; i++){
             Contact contact = contacts[i];
-            for(int j = i; j < contact.length; j++){
+            for(int j = i+1; j < contacts.length; j++){
                 Contact other = contacts[j];
-                if()
+                if(contact.getPhone() == other.getPhone()){
+                    System.out.println(CONTACTS_SHARING);
+                }
             }
         }
+        System.out.println(CONTACTS_DIF_NUMBERS);
     }
 
     private static void getName(Scanner in, ContactBook cBook) {
@@ -175,6 +179,6 @@ public class Main {
         if (cBook.hasContact(phone)) {
             System.out.println(cBook.getName(phone));
         }
-        else System.out.println(NAME_NOT_EXIST);
+        else System.out.println(PHONE_NOT_EXISTS);
     }
 }

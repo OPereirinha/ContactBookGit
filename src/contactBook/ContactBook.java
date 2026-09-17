@@ -93,4 +93,7 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    public Contact[] getContacts(){
+        return contacts;
+    }
 }

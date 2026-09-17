@@ -6,5 +6,9 @@ You will notice some things need to be updated in this code. It was originally m
 
 Tiago Pereira - 71677
 Martim Sanguinho - 71330
+<<<<<<< HEAD
 
 Duas cenas quaisquer
+=======
+Uma cena qualquer
+>>>>>>> 699f6e9b96fad645cb462d6e5f844914eb32fecf

@@ -54,6 +54,9 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
+                 case GET_NAME:
+                    getName(in,cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -147,5 +150,14 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+
+    private static void getName(Scanner in, ContactBook cBook) {
+        int phone;
+        phone = in.nextInt(); in.nextLine();
+        if (cBook.hasContact(phone)) {
+            System.out.println(cBook.getName(phone));
+        }
+        else System.out.println(NAME_NOT_EXIST);
     }
 }
